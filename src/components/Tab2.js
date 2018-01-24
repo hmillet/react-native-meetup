@@ -44,6 +44,8 @@ export default class Tab2 extends Component {
   }
 
   render() {
+    //setTimeout(() => console.debug(this.props.children), 2000);
+    console.debug(this.props.children);
     return <View style={styles.container}>{this.renderContent()}</View>;
   }
 }

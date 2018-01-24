@@ -1,11 +1,19 @@
 import React, { Component } from "react";
-import { ActivityIndicator, Image, StyleSheet, Text, View } from "react-native";
+import {
+  ActivityIndicator,
+  Image,
+  StyleSheet,
+  Text,
+  View,
+  Switch
+} from "react-native";
 
 import Settings from "../config/Settings";
 
 export default class Tab1 extends Component {
   state = {
-    group: null
+    group: null,
+    isActive: false
   };
 
   componentDidMount() {
@@ -32,6 +40,11 @@ export default class Tab1 extends Component {
             }}
           />
           <Text style={styles.text1}>{this.state.group.name}</Text>
+          <Switch
+            style={{ alignSelf: "center" }}
+            value={this.state.isActive}
+            onValueChange={B_Value => this.setState({ isActive: B_Value })}
+          />
           <Text style={styles.text2}>
             Nombre de membres : {this.state.group.members}
           </Text>
